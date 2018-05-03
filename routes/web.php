@@ -17,4 +17,4 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/user/dashboard', 'HomeController@index')->name('user.dashboard');
+Route::get('/user/dashboard', 'UserDashboardController@show')->name('user.dashboard');
