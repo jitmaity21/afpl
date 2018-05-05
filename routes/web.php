@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
-
 Route::get('/user/dashboard', 'UserDashboardController@show')->name('user.dashboard');
+Route::get('/{slug?}', 'PageController@viewSingle')->name('page.single');
+Route::get('admin/pages', 'Admin\Page\AdminPageController@index')->name('page.list');
+Route::get('admin/page/add', 'Admin\Page\AdminPageController@create')->name('page.add');
+Route::get('admin/page/edit/{$id}', 'Admin\Page\AdminPageController@edit')->name('page.edit');
